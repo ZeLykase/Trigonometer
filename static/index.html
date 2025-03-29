@@ -1,1 +1,197 @@
-test
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="styles.css"/>
+    <title data-i18n="title">Тригонометр</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 data-i18n="header.title">Тригонометр</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang="ru">Русский</button>
+            <button class="lang-btn" data-lang="en">English</button>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="circle" data-i18n="tabs.circle">Тригонометрическая окружность</button>
+            <button class="tab-btn" data-tab="triangle" data-i18n="tabs.triangle">Калькулятор треугольника</button>
+            <button class="tab-btn" data-tab="theory" data-i18n="tabs.theory">Теория</button>
+        </div>
+        
+        <div id="circle" class="tab-content active">
+            <h2 data-i18n="circle.title">Тригонометрическая окружность</h2>
+            <p data-i18n="circle.description">Нажмите на любую точку окружности или перемещайте курсор, чтобы увидеть соответствующие значения углов и тригонометрических функций.</p>
+            
+            <div class="circle-container">
+                <canvas id="trigCircle" width="450" height="450"></canvas>
+                
+                <div class="circle-info">
+                    <div class="show-tangents">
+                        <input type="checkbox" id="showTangents" checked>
+                        <label for="showTangents" data-i18n="circle.showTangents">Показать оси тангенсов и котангенсов</label>
+                    </div>
+                    
+                    <div class="search-point">
+                        <input type="text" id="pointSearch" data-i18n-placeholder="circle.searchPlaceholder" placeholder="Введите угол (например, 30°, π/6 или 0.5π)">
+                        <button id="searchBtn" data-i18n="circle.searchButton">Найти</button>
+                    </div>
+                    
+                    <div class="point-info">
+                        <h3 data-i18n="circle.pointInfo">Информация о точке</h3>
+                        <p><strong data-i18n="circle.angleDeg">Угол в градусах:</strong> <span id="angleDeg">0°</span></p>
+                        <p><strong data-i18n="circle.angleRad">Угол в радианах:</strong> <span id="angleRad">0</span>π</p>
+                        <p><strong data-i18n="circle.coordinates">Координаты:</strong> (<span id="coordX">1</span>, <span id="coordY">0</span>)</p>
+                        <p><strong>sin(α):</strong> <span id="sinValue">0</span></p>
+                        <p><strong>cos(α):</strong> <span id="cosValue">1</span></p>
+                        <p><strong>tg(α):</strong> <span id="tanValue">0</span></p>
+                        <p><strong>ctg(α):</strong> <span id="cotValue">∞</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="triangle" class="tab-content">
+            <h2 data-i18n="triangle.title">Калькулятор прямоугольного треугольника</h2>
+            
+            <div class="triangle-calculator">
+                <div class="input-grid">
+                    <div class="input-field">
+                        <label for="sideA" data-i18n="triangle.sideA">Катет a:</label>
+                        <input type="number" id="sideA" placeholder="a" step="any" class="triangle-input">
+                    </div>
+                    
+                    <div class="input-field">
+                        <label for="sideB" data-i18n="triangle.sideB">Катет b:</label>
+                        <input type="number" id="sideB" placeholder="b" step="any" class="triangle-input">
+                    </div>
+                    
+                    <div class="input-field">
+                        <label for="hypotenuse" data-i18n="triangle.hypotenuse">Гипотенуза c:</label>
+                        <input type="number" id="hypotenuse" placeholder="c" step="any" class="triangle-input">
+                    </div>
+                    
+                    <div class="input-field">
+                        <label for="angleAlpha" data-i18n="triangle.angleAlpha">Угол α (°):</label>
+                        <input type="number" id="angleAlpha" placeholder="α" step="any" max="89.999" class="triangle-input">
+                    </div>
+                    
+                    <div class="input-field">
+                        <label for="angleBeta" data-i18n="triangle.angleBeta">Угол β (°):</label>
+                        <input type="number" id="angleBeta" placeholder="β" step="any" max="89.999" class="triangle-input">
+                    </div>
+                    
+                    <div class="input-field">
+                        <label for="height" data-i18n="triangle.height">Высота h:</label>
+                        <input type="number" id="height" placeholder="h" step="any" class="triangle-input">
+                    </div>
+                    
+                    <div class="input-field">
+                        <label for="area" data-i18n="triangle.area">Площадь (S):</label>
+                        <input type="number" id="area" placeholder="S" step="any" class="triangle-input">
+                    </div>
+                    
+                    <div class="input-field">
+                        <label for="perimeter" data-i18n="triangle.perimeter">Периметр (p):</label>
+                        <input type="number" id="perimeter" placeholder="p" step="any" class="triangle-input">
+                    </div>
+                </div>
+                
+                <div class="triangle-image-container">
+                    <img id="triangleImage" src="triangle.png" alt="Прямоугольный треугольник" class="triangle-image">
+                </div>
+                
+                <div class="triangle-buttons">
+                    <button id="calculateTriangle" class="calculate-btn" data-i18n="triangle.calculate">Рассчитать</button>
+                    <button id="resetTriangle" class="reset-btn" data-i18n="triangle.reset">Сбросить</button>
+                </div>
+                
+                <div id="triangleError" class="error-message"></div>
+                
+                <div class="results-grid" id="triangleResults">
+                    <div class="result-item"><strong data-i18n="triangle.sideA">Катет a:</strong> <span id="resultA">-</span></div>
+                    <div class="result-item"><strong data-i18n="triangle.sideB">Катет b:</strong> <span id="resultB">-</span></div>
+                    <div class="result-item"><strong data-i18n="triangle.hypotenuse">Гипотенуза c:</strong> <span id="resultC">-</span></div>
+                    <div class="result-item"><strong data-i18n="triangle.angleAlpha">Угол α:</strong> <span id="resultAlpha">-</span></div>
+                    <div class="result-item"><strong data-i18n="triangle.angleBeta">Угол β:</strong> <span id="resultBeta">-</span></div>
+                    <div class="result-item"><strong data-i18n="triangle.area">Площадь (S):</strong> <span id="resultArea">-</span></div>
+                    <div class="result-item"><strong data-i18n="triangle.perimeter">Периметр (p):</strong> <span id="resultPerimeter">-</span></div>
+                    <div class="result-item"><strong data-i18n="triangle.height">Высота к гипотенузе (h):</strong> <span id="resultHeight">-</span></div>
+                    <div class="result-item"><strong data-i18n="triangle.inradius">Радиус вписанной окружности:</strong> <span id="resultInradius">-</span></div>
+                    <div class="result-item"><strong data-i18n="triangle.circumradius">Радиус описанной окружности:</strong> <span id="resultCircumradius">-</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="theory" class="tab-content">
+            <h2 data-i18n="theory.title">Теоретические основы тригонометрии</h2>
+            
+            <div class="theory-content">
+                <div class="theory-section">
+                    <h3 data-i18n="theory.basics">Основные понятия</h3>
+                    <p data-i18n="theory.basicsText">Тригонометрия — раздел математики, изучающий соотношения между сторонами и углами треугольников и тригонометрические функции.</p>
+                    
+                    <h4 data-i18n="theory.trigFunctions">Тригонометрические функции</h4>
+                    <p data-i18n="theory.trigFunctionsText">Для острого угла прямоугольного треугольника:</p>
+                    <div class="formula">sin(α) = <span data-i18n="theory.oppositeLeg">противолежащий катет</span> / <span data-i18n="theory.hypotenuse">гипотенуза</span></div>
+                    <div class="formula">cos(α) = <span data-i18n="theory.adjacentLeg">прилежащий катет</span> / <span data-i18n="theory.hypotenuse">гипотенуза</span></div>
+                    <div class="formula">tg(α) = <span data-i18n="theory.oppositeLeg">противолежащий катет</span> / <span data-i18n="theory.adjacentLeg">прилежащий катет</span></div>
+                    <div class="formula">ctg(α) = <span data-i18n="theory.adjacentLeg">прилежащий катет</span> / <span data-i18n="theory.oppositeLeg">противолежащий катет</span></div>
+                    
+                    <h4 data-i18n="theory.unitCircle">Тригонометрическая окружность</h4>
+                    <p data-i18n="theory.unitCircleText">Единичная окружность с центром в начале координат позволяет определить тригонометрические функции для любых углов.</p>
+                    <div class="formula">x = cos(α), y = sin(α)</div>
+                </div>
+                
+                <div class="theory-section">
+                    <h3 data-i18n="theory.identities">Основные тригонометрические тождества</h3>
+                    <div class="formula">sin²(α) + cos²(α) = 1</div>
+                    <div class="formula">1 + tg²(α) = 1/cos²(α)</div>
+                    <div class="formula">1 + ctg²(α) = 1/sin²(α)</div>
+                    <div class="formula">tg(α) = sin(α)/cos(α)</div>
+                    <div class="formula">ctg(α) = cos(α)/sin(α)</div>
+                    
+                    <h4 data-i18n="theory.additionFormulas">Формулы сложения</h4>
+                    <div class="formula">sin(α ± β) = sin(α)cos(β) ± cos(α)sin(β)</div>
+                    <div class="formula">cos(α ± β) = cos(α)cos(β) ∓ sin(α)sin(β)</div>
+                    <div class="formula">tg(α ± β) = (tg(α) ± tg(β)) / (1 ∓ tg(α)tg(β))</div>
+                </div>
+                
+                <div class="theory-section">
+                    <h3 data-i18n="theory.doubleAngle">Формулы двойного и половинного угла</h3>
+                    <div class="formula">sin(2α) = 2sin(α)cos(α)</div>
+                    <div class="formula">cos(2α) = cos²(α) - sin²(α) = 2cos²(α) - 1 = 1 - 2sin²(α)</div>
+                    <div class="formula">tg(2α) = 2tg(α) / (1 - tg²(α))</div>
+                    
+                    <div class="formula">sin(α/2) = ±√((1 - cos(α))/2)</div>
+                    <div class="formula">cos(α/2) = ±√((1 + cos(α))/2)</div>
+                    <div class="formula">tg(α/2) = (1 - cos(α)) / sin(α) = sin(α) / (1 + cos(α))</div>
+                </div>
+                
+                <div class="theory-section">
+                    <h3 data-i18n="theory.sumToProduct">Формулы преобразования суммы в произведение</h3>
+                    <div class="formula">sin(α) + sin(β) = 2sin((α+β)/2)cos((α-β)/2)</div>
+                    <div class="formula">sin(α) - sin(β) = 2cos((α+β)/2)sin((α-β)/2)</div>
+                    <div class="formula">cos(α) + cos(β) = 2cos((α+β)/2)cos((α-β)/2)</div>
+                    <div class="formula">cos(α) - cos(β) = -2sin((α+β)/2)sin((α-β)/2)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Тригонометр © 2025</p>
+        </div>
+    </footer>
+    
+    <button class="theme-toggle" id="themeToggle">🌓</button>
+    <script src="script.js"></script>
+</body>
+</html>
