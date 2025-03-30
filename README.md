@@ -7,7 +7,7 @@
 
 ***Зайти на сайт: http://trigonometer.ru/***
 
-***Visit the site:: http://trigonometer.ru/***
+***Visit the site: http://trigonometer.ru/***
 
 ———
 
