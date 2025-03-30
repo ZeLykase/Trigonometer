@@ -5,7 +5,13 @@
 
 ———
 
-***The site supports English and Russian languages***
+***Зайти на сайт: http://trigonometer.ru/***
 
-***Сайт поддерживает английский и русский языки***
+***Visit the site:: http://trigonometer.ru/***
+
+———
+
+*The site supports English and Russian languages*
+
+*Сайт поддерживает английский и русский языки*
 
