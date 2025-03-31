@@ -4,6 +4,8 @@ const translations = {
     ru: {
         "title": "Тригонометр",
         "header.title": "Тригонометр",
+        "tanLabel": "tg",
+        "cotLabel": "ctg",
         "tabs.circle": "Тригонометрическая окружность",
         "tabs.triangle": "Калькулятор треугольника",
         "tabs.theory": "Теория",
@@ -48,11 +50,49 @@ const translations = {
         "errors.legLessThanHypotenuse": "Катет должен быть меньше гипотенузы",
         "errors.angleRange": "Угол должен быть между 0 и 90 градусами",
         "errors.heightLimit": "Высота не может быть больше половины гипотенузы",
-        "errors.invalidCombination": "Неподдерживаемая комбинация параметров"
+        "errors.invalidCombination": "Неподдерживаемая комбинация параметров",
+        "tabs.about": "О проекте",
+        "about.title": "О проекте",
+        "about.description1": "Тригонометр — это открытый образовательный проект, созданный для более удобного изучения тригонометрии с динамической тригонометрической окружностью, калькулятором прямоугольного треугольника и небольшого справочника по тригонометрическим формулам.",
+        "about.features": "Основные возможности:",
+        "about.feature1": "Интерактивная тригонометрическая окружность",
+        "about.feature2": "Калькулятор прямоугольных треугольников",
+        "about.feature3": "Теоретические материалы с формулами",
+        "about.feature4": "Поддержка светлой/тёмной темы",
+        "about.feature5": "Локализация (русский/английский)",
+        "about.creators": "Создатель:",
+        "about.creatorsText": "Алексей Калашников (ZeLykase)",
+        "about.github": "Исходный код на GitHub",
+        "theory.rightTriangle": "Прямоугольный треугольник",
+        "theory.rightTriangleText": "Прямоугольный треугольник — треугольник, у которого один угол равен 90°. Стороны, образующие прямой угол, называются катетами, а сторона, лежащая напротив прямого угла — гипотенузой.",
+        "theory.pythagorean": "Теорема Пифагора",
+        "theory.pythagoreanFormula": "c² = a² + b²",
+        "theory.area": "Площадь",
+        "theory.areaFormula": "S = (a × b) / 2",
+        "theory.perimeter": "Периметр",
+        "theory.perimeterFormula": "P = a + b + c",
+        "theory.height": "Высота к гипотенузе",
+        "theory.heightFormula": "h = (a × b) / c",
+        "theory.inradius": "Радиус вписанной окружности",
+        "theory.inradiusFormula": "r = (a + b - c) / 2",
+        "theory.circumradius": "Радиус описанной окружности",
+        "theory.circumradiusFormula": "R = c / 2",
+        "theory.trigRelations": "Тригонометрические соотношения",
+        "theory.sinFormula": "sin(α) = a / c",
+        "theory.cosFormula": "cos(α) = b / c",
+        "theory.tanFormula": "tg(α) = a / b",
+        "theory.cotFormula": "ctg(α) = b / a",
+        "theory.similarTriangles": "Свойства подобных треугольников",
+        "theory.similarFormula1": "h² = p × q",
+        "theory.similarFormula2": "a² = p × c",
+        "theory.similarFormula3": "b² = q × c",
+        "theory.similarNote": "где p и q — проекции катетов на гипотенузу"
     },
     en: {
         "title": "Trigonometer",
         "header.title": "Trigonometer",
+        "tanLabel": "tan",
+        "cotLabel": "cot",
         "tabs.circle": "Trigonometric Circle",
         "tabs.triangle": "Triangle Calculator",
         "tabs.theory": "Theory",
@@ -97,7 +137,44 @@ const translations = {
         "errors.legLessThanHypotenuse": "Leg must be less than hypotenuse",
         "errors.angleRange": "Angle must be between 0 and 90 degrees",
         "errors.heightLimit": "Height cannot be more than half of hypotenuse",
-        "errors.invalidCombination": "Unsupported parameter combination"
+        "errors.invalidCombination": "Unsupported parameter combination",
+        "tabs.about": "About",
+        "about.title": "About Project",
+        "about.description1": "Trigonometer is an open educational project created to make learning trigonometry easier with a dynamic trigonometric circle, a right triangle calculator, and a small reference book on trigonometric formulas.",
+        "about.features": "Key Features:",
+        "about.feature1": "Interactive trigonometric circle",
+        "about.feature2": "Right triangle calculator",
+        "about.feature3": "Theoretical materials with formulas",
+        "about.feature4": "Light/dark theme support",
+        "about.feature5": "Localization (Russian/English)",
+        "about.creators": "Creator:",
+        "about.creatorsText": "Alexey Kalashnikov (ZeLykase)",
+        "about.github": "Source code on GitHub",
+        "theory.rightTriangle": "Right Triangle",
+        "theory.rightTriangleText": "A right triangle has one 90° angle. The sides forming the right angle are called legs, and the side opposite the right angle is the hypotenuse.",
+        "theory.pythagorean": "Pythagorean Theorem",
+        "theory.pythagoreanFormula": "c² = a² + b²",
+        "theory.area": "Area",
+        "theory.areaFormula": "S = (a × b) / 2",
+        "theory.perimeter": "Perimeter",
+        "theory.perimeterFormula": "P = a + b + c",
+        "theory.height": "Altitude to Hypotenuse",
+        "theory.heightFormula": "h = (a × b) / c",
+        "theory.inradius": "Inradius",
+        "theory.inradiusFormula": "r = (a + b - c) / 2",
+        "theory.circumradius": "Circumradius",
+        "theory.circumradiusFormula": "R = c / 2",
+        "theory.trigRelations": "Trigonometric Ratios",
+        "theory.sinFormula": "sin(α) = a / c",
+        "theory.cosFormula": "cos(α) = b / c",
+        "theory.tanFormula": "tan(α) = a / b",
+        "theory.cotFormula": "cot(α) = b / a",
+        "theory.similarTriangles": "Properties of Similar Triangles",
+        "theory.similarFormula1": "h² = p × q",
+        "theory.similarFormula2": "a² = p × c",
+        "theory.similarFormula3": "b² = q × c",
+        "theory.similarNote": "where p and q are the projections of the legs onto the hypotenuse"
+        
     }
 };
 
@@ -288,6 +365,14 @@ function drawCircle() {
     ctx.lineTo(pointX, centerY);
     ctx.lineTo(centerX, centerY);
     ctx.strokeStyle = 'rgba(74, 111, 165, 0.5)';
+    ctx.stroke();
+
+    // Перпендикуляр 2
+    ctx.beginPath();
+    ctx.moveTo(pointX, pointY);
+    ctx.lineTo(centerX, pointY);
+    ctx.lineTo(centerX, centerY);
+    ctx.strokeStyle = 'rgba(165, 74, 148, 0.5)';
     ctx.stroke();
     
     ctx.beginPath();
@@ -637,3 +722,87 @@ window.addEventListener('load', () => {
         });
     });
 });
+
+
+
+// Создаем изолированный модуль через IIFE
+(function() {
+    'use strict';
+    
+    // Конфигурация
+    const config = {
+        sloganContainerId: 'randomSlogan',
+        langButtonsSelector: '.lang-btn',
+        slogans: {
+            ru: [
+                "Также попробуйте Orbitalika!",
+                "Также попробуйте Insectopedia!",
+                "Интерактивный сайт для изучения тригонометрии"
+            ],
+            en: [
+                "Also try Orbitalika!",
+                "Also try Insectopedia!",
+                "Interactive platform for learning trigonometry"
+            ]
+        }
+    };
+
+    // Состояние
+    let state = {
+        currentLanguage: 'ru',
+        selectedSloganIndex: null
+    };
+
+    // Инициализация
+    function init() {
+        // Генерация случайного слогана при первой загрузке
+        if(state.selectedSloganIndex === null) {
+            state.selectedSloganIndex = Math.floor(Math.random() * config.slogans.ru.length);
+        }
+        
+        // Находим элементы
+        const sloganElement = document.getElementById(config.sloganContainerId);
+        const langButtons = document.querySelectorAll(config.langButtonsSelector);
+        
+        // Проверка элементов
+        if(!sloganElement) {
+            console.error('Slogan container not found');
+            return;
+        }
+
+        // Обновление слогана
+        function updateSlogan() {
+            sloganElement.textContent = 
+                config.slogans[state.currentLanguage][state.selectedSloganIndex];
+        }
+
+        // Обработчик переключения языка
+        function handleLanguageChange(lang) {
+            state.currentLanguage = lang;
+            updateSlogan();
+        }
+
+        // Вешаем обработчики на кнопки языка
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.dataset.lang;
+                if(config.slogans[lang]) {
+                    handleLanguageChange(lang);
+                }
+            });
+        });
+
+        // Первоначальная отрисовка
+        updateSlogan();
+
+        // Сброс при полной перезагрузке
+        window.addEventListener('beforeunload', () => {
+            state.selectedSloganIndex = null;
+        });
+    }
+
+    // Запуск после загрузки DOM
+    document.addEventListener('DOMContentLoaded', init);
+})();
+
+
