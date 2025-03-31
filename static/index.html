@@ -2,14 +2,18 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="logo.png" type="logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Тригонометр — интерактивный помощник по тригонометрии. Изучайте тригонометрическую окружность, решайте задачи с калькулятором прямоугольных треугольников и освойте теорию с наглядными формулами. Бесплатно, без рекламы!">
+    <meta name="keywords" content="trigonometr, trigonometr.ru, тригонометер, тригонометр, тригонометрия, тригонометрическая окружность, калькулятор треугольника, школа, 10 класс, геометрия, алгебра, sin cos tg ctg, углы в градусах и радианах, формулы тригонометрии, решение треугольников, математика онлайн, теория тригонометрии, единичная окружность">
     <link rel="stylesheet"  href="styles.css"/>
-    <title data-i18n="title">Тригонометр</title>
+    <title data-i18n="title">Тригонометр — тригонометрия наглядно</title>
 </head>
 <body>
     <header>
         <div class="container">
             <h1 data-i18n="header.title">Тригонометр</h1>
+            <div class="random-slogan" id="randomSlogan"></div>
         </div>
     </header>
     
@@ -23,6 +27,7 @@
             <button class="tab-btn active" data-tab="circle" data-i18n="tabs.circle">Тригонометрическая окружность</button>
             <button class="tab-btn" data-tab="triangle" data-i18n="tabs.triangle">Калькулятор треугольника</button>
             <button class="tab-btn" data-tab="theory" data-i18n="tabs.theory">Теория</button>
+            <button class="tab-btn" data-tab="about" data-i18n="tabs.about">О проекте</button>
         </div>
         
         <div id="circle" class="tab-content active">
@@ -46,12 +51,12 @@
                     <div class="point-info">
                         <h3 data-i18n="circle.pointInfo">Информация о точке</h3>
                         <p><strong data-i18n="circle.angleDeg">Угол в градусах:</strong> <span id="angleDeg">0°</span></p>
-                        <p><strong data-i18n="circle.angleRad">Угол в радианах:</strong> <span id="angleRad">0</span>π</p>
+                        <p><strong data-i18n="circle.angleRad">Угол в радианах:</strong> <span id="angleRad">0</span></p>
                         <p><strong data-i18n="circle.coordinates">Координаты:</strong> (<span id="coordX">1</span>, <span id="coordY">0</span>)</p>
                         <p><strong>sin(α):</strong> <span id="sinValue">0</span></p>
                         <p><strong>cos(α):</strong> <span id="cosValue">1</span></p>
-                        <p><strong>tg(α):</strong> <span id="tanValue">0</span></p>
-                        <p><strong>ctg(α):</strong> <span id="cotValue">∞</span></p>
+                        <p><strong><span data-i18n="tanLabel">tg</span>(α):</strong> <span id="tanValue">0</span></p>
+                        <p><strong><span data-i18n="cotLabel">ctg</span>(α):</strong> <span id="cotValue">∞</span></p>
                     </div>
                 </div>
             </div>
@@ -180,6 +185,73 @@
                     <div class="formula">sin(α) - sin(β) = 2cos((α+β)/2)sin((α-β)/2)</div>
                     <div class="formula">cos(α) + cos(β) = 2cos((α+β)/2)cos((α-β)/2)</div>
                     <div class="formula">cos(α) - cos(β) = -2sin((α+β)/2)sin((α-β)/2)</div>
+                </div>
+                <div class="theory-section">
+                    <h3 data-i18n="theory.rightTriangle">Прямоугольный треугольник</h3>
+                    <p data-i18n="theory.rightTriangleText">Прямоугольный треугольник — треугольник, у которого один угол равен 90°. Стороны, образующие прямой угол, называются катетами, а сторона, лежащая напротив прямого угла — гипотенузой.</p>
+                
+                    <h4 data-i18n="theory.pythagorean">Теорема Пифагора</h4>
+                    <div class="formula" data-i18n="theory.pythagoreanFormula">c² = a² + b²</div>
+                
+                    <h4 data-i18n="theory.area">Площадь</h4>
+                    <div class="formula" data-i18n="theory.areaFormula">S = (a × b) / 2</div>
+                
+                    <h4 data-i18n="theory.perimeter">Периметр</h4>
+                    <div class="formula" data-i18n="theory.perimeterFormula">P = a + b + c</div>
+                
+                    <h4 data-i18n="theory.height">Высота к гипотенузе</h4>
+                    <div class="formula" data-i18n="theory.heightFormula">h = (a × b) / c</div>
+                
+                    <h4 data-i18n="theory.inradius">Радиус вписанной окружности</h4>
+                    <div class="formula" data-i18n="theory.inradiusFormula">r = (a + b - c) / 2</div>
+                
+                    <h4 data-i18n="theory.circumradius">Радиус описанной окружности</h4>
+                    <div class="formula" data-i18n="theory.circumradiusFormula">R = c / 2</div>
+                
+                    <h4 data-i18n="theory.trigRelations">Тригонометрические соотношения</h4>
+                    <div class="formula-group">
+                        <div class="formula" data-i18n="theory.sinFormula">sin(α) = a / c</div>
+                        <div class="formula" data-i18n="theory.cosFormula">cos(α) = b / c</div>
+                        <div class="formula" data-i18n="theory.tanFormula">tg(α) = a / b</div>
+                        <div class="formula" data-i18n="theory.cotFormula">ctg(α) = b / a</div>
+                    </div>
+                
+                    <h4 data-i18n="theory.similarTriangles">Свойства подобных треугольников</h4>
+                    <div class="formula-group">
+                        <div class="formula" data-i18n="theory.similarFormula1">h² = p × q</div>
+                        <div class="formula" data-i18n="theory.similarFormula2">a² = p × c</div>
+                        <div class="formula" data-i18n="theory.similarFormula3">b² = q × c</div>
+                    </div>
+                    <p data-i18n="theory.similarNote">где p и q — проекции катетов на гипотенузу</p>
+                </div>
+            </div>
+        </div>
+        <div id="about" class="tab-content">
+            <h2 data-i18n="about.title">О проекте</h2>
+            
+            <div class="about-content">
+                <p data-i18n="about.description1">Тригонометр — это открытый образовательный проект, созданный для более удобного изучения тригонометрии с динамической тригонометрической окружностью, калькулятором прямоугольного треугольника и небольшого справочника по тригонометрическим формулам.</p>
+                
+                <h3 data-i18n="about.features">Основные возможности:</h3>
+                <ul>
+                    <li data-i18n="about.feature1">Интерактивная тригонометрическая окружность</li>
+                    <li data-i18n="about.feature2">Калькулятор прямоугольных треугольников</li>
+                    <li data-i18n="about.feature3">Теоретические материалы с формулами</li>
+                    <li data-i18n="about.feature4">Поддержка светлой/тёмной темы</li>
+                    <li data-i18n="about.feature5">Локализация (русский/английский)</li>
+                </ul>
+        
+                <h3 data-i18n="about.creators">Создатель:</h3>
+                <p data-i18n="about.creatorsText">Алексей Калашников (ZeLykase)</p>
+        
+                <div class="github-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                    <a href="https://github.com/ZeLykase/Trigonometer" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       data-i18n="about.github">Исходный код на GitHub</a>
                 </div>
             </div>
         </div>
